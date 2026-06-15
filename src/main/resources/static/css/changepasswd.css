@@ -1,83 +1,100 @@
-/* Container for form */
 .container {
-    width: 100%;
-    max-width: 600px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: #E8F8FD; /* Light background */
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 420px;
+  margin: 32px auto;
+  padding: 28px;
+  background-color: var(--color-bg-card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
 }
 
-/* Form heading */
 .container h2 {
-    color: #004733;
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 20px;
+  color: var(--color-primary);
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 24px;
 }
 
-/* Labels and Input Fields */
 .container label {
-    display: block;
-    margin-top: 15px;
-    font-weight: bold;
-    color: #004733;
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: var(--color-text);
+  font-size: 14px;
 }
 
 .container input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    box-sizing: border-box;
+  width: 100%;
+  padding: 10px 14px;
+  margin-bottom: 14px;
+  border: 1.5px solid #D1FAE5;
+  border-radius: var(--radius-sm);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  color: var(--color-text);
+  background-color: #F8FFFE;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  box-sizing: border-box;
 }
 
-/* Button Group Styling */
+.container input[type="password"]:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
+}
+
 .button-group {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 20px;
 }
 
 .btn {
-    width: 48%;
-    padding: 12px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    color: white;
+  width: 48%;
+  padding: 12px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition);
 }
 
 .btn-continue {
-    background-color: #007BFF; /* Blue for Continue button */
+  background-color: var(--color-primary);
+  color: white;
 }
 
 .btn-continue:hover {
-    background-color: #0056b3;
+  background-color: var(--color-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
 }
 
 .btn-cancel {
-    background-color: #DC3545; /* Red for Cancel button */
+  background-color: #F1F5F9;
+  color: var(--color-text);
 }
 
 .btn-cancel:hover {
-    background-color: #c82333;
+  background-color: #E2E8F0;
 }
 
-/* Mobile Responsiveness */
 @media (max-width: 768px) {
-    .container {
-        width: 90%;
-    }
-    .button-group {
-        flex-direction: column;
-    }
-    .btn {
-        width: 100%;
-        margin-top: 10px;
-    }
+  .container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
 }

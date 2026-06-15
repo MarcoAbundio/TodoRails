@@ -15,17 +15,22 @@
     <!-- Include the Sidebar Menu -->
     <div th:replace="~{fragments/menu :: menu}"></div>
 
-    <!-- Header Section -->
     <div class="header" th:fragment="header">
         <div class="logo-section">
-            <img th:src="@{/images/logo.png}" alt="ToDo Rails Logo" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;">
+                <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/>
+                <rect x="9" y="3" width="6" height="4" rx="1"/>
+                <path d="M9 14l2 2 4-4"/>
+            </svg>
             <div class="text-section">
                 <h1>ToDo Rails</h1>
                 <p>Keep Your Goals on Track</p>
             </div>
-
             <div class="heading-section">
-                <img th:src="@{/images/change_passwd.png}"/>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px;">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
                 Change Password
             </div>
         </div>

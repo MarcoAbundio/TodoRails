@@ -10,10 +10,13 @@
 <body>
 <div class="wrapper">
 
-    <!-- Header Section -->
     <div class="header">
         <div class="logo-section">
-            <img th:src="@{/images/logo.png}" alt="ToDo Rails Logo" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;">
+                <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/>
+                <rect x="9" y="3" width="6" height="4" rx="1"/>
+                <path d="M9 14l2 2 4-4"/>
+            </svg>
             <div class="text-section">
                 <h1>ToDo Rails</h1>
                 <p>Keep Your Goals on Track</p>
@@ -24,22 +27,16 @@
         </div>
     </div>
 
-    <!-- Main Content for Login Page -->
     <div class="container login-container">
-        <h1>Login</h1>
-        <!-- display flash message, if redirected from registration after success -->
+        <h2 style="margin:0 0 24px;color:var(--color-primary);font-size:22px;font-weight:700;text-align:center;">Login</h2>
         <div th:if="${successMessage}" class="flash-alert flash-alert-success">
-            <h2 th:text="${successMessage}"></h2>
+            <p th:text="${successMessage}"></p>
         </div>
-        <!-- end display flash message, if redirected from registration after success -->
-
-        <!-- display error message, if redirected from login after failure -->
         <div th:if="${param.error}" class="flash-alert flash-alert-danger">
-            Invalid username or password. Please try again.
+            <p>Invalid username or password. Please try again.</p>
         </div>
-        <!-- end display error message, if redirected from login after failure -->
 
-        <form action="/login" method="post" >
+        <form action="/login" method="post">
             <label for="username">Username or Email:</label>
             <input type="text" id="username" name="username" placeholder="Enter your username or email" required>
 
@@ -47,12 +44,8 @@
             <input type="password" id="password" name="password" placeholder="Enter your password" required>
 
             <button type="submit" class="btn btn-login">Continue</button>
-
-            <div class="error-message" th:if="${param.error}">
-                Invalid username or password, please try again.
-            </div>
         </form>
-        <p>Don't have an account? <a th:href="@{/register}">Register</a></p>
+        <p style="text-align:center;margin-top:16px;font-size:14px;color:var(--color-text-muted);">Don't have an account? <a th:href="@{/register}" style="color:var(--color-primary);font-weight:600;">Register</a></p>
     </div>
 
     <!-- Include the footer -->
